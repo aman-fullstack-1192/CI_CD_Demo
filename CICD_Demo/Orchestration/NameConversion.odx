@@ -1,0 +1,157 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="f5300b80-d960-4015-a065-55f6b9b5f03a" LowerBound="1.1" HigherBound="33.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="CICD_Demo" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="c99db457-7b37-4b97-9417-e94c79690481" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Input_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e6f3a757-dde2-4927-bfbc-b0e120cf1d35" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Sync_Req_Resp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="2b8769ec-1b21-4dfd-9fa4-66f67328d402" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.26">
+                    <om:Property Name="Ref" Value="CICD_Demo.Schemas.Input" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="34d3dbf1-7943-4d98-b4d2-97d171868075" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.28" HigherBound="8.42">
+                    <om:Property Name="Ref" Value="CICD_Demo.Schemas.Output" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="602c3516-74ea-4bd6-9676-d5995a89bc7d" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="32.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="NameConversion" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="b96f74c6-ff21-41d4-85b9-efbce1b4f1d6" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="7d8fc139-86e2-46f3-b419-98f58e6cfb9a" ParentLink="ServiceBody_Statement" LowerBound="20.1" HigherBound="22.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Input_Port" />
+                    <om:Property Name="MessageName" Value="msgInput" />
+                    <om:Property Name="OperationName" Value="Sync_Req_Resp" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Input" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="bcc18ee5-6aa3-4469-beab-22158a540701" ParentLink="ServiceBody_Statement" LowerBound="22.1" HigherBound="28.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Output" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="01c55223-03ec-4679-9479-5dc8705bdb5e" ParentLink="ComplexStatement_Statement" LowerBound="25.1" HigherBound="27.1">
+                        <om:Property Name="ClassName" Value="CICD_Demo.Maps.TransformInputToOutput" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="f6b414a8-005f-4a7c-abf9-8294e46b9b52" ParentLink="Transform_InputMessagePartRef" LowerBound="26.80" HigherBound="26.88">
+                            <om:Property Name="MessageRef" Value="msgInput" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="dfa90ef9-9af1-4ccf-a025-d29a5a65ed89" ParentLink="Transform_OutputMessagePartRef" LowerBound="26.28" HigherBound="26.37">
+                            <om:Property Name="MessageRef" Value="msgOutput" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="867af59c-ab91-4ca7-90fc-2fe56e7779bb" ParentLink="Construct_MessageRef" LowerBound="23.23" HigherBound="23.32">
+                        <om:Property Name="Ref" Value="msgOutput" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="a68d3f2a-38f7-45fb-b446-7758528c622d" ParentLink="ServiceBody_Statement" LowerBound="28.1" HigherBound="30.1">
+                    <om:Property Name="PortName" Value="Input_Port" />
+                    <om:Property Name="MessageName" Value="msgOutput" />
+                    <om:Property Name="OperationName" Value="Sync_Req_Resp" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Output" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="73ba2e9f-a550-401c-bfc1-83ad08f97a70" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="CICD_Demo.Input_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Input_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="5be1204a-8448-4d12-a0dd-700d944d29a6" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1f59a36a-7edb-469d-8b20-fbca01f6cd62" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
+                <om:Property Name="Type" Value="CICD_Demo.Schemas.Input" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgInput" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="445669a0-b82c-4a06-aa35-e153c634ebb9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="17.1" HigherBound="18.1">
+                <om:Property Name="Type" Value="CICD_Demo.Schemas.Output" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgOutput" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module CICD_Demo
+{
+    internal porttype Input_PortType
+    {
+        requestresponse Sync_Req_Resp
+        {
+            Schemas.Input, Schemas.Output
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service NameConversion
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Input_PortType Input_Port;
+        message Schemas.Input msgInput;
+        message Schemas.Output msgOutput;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7d8fc139-86e2-46f3-b419-98f58e6cfb9a")]
+            activate receive (Input_Port.Sync_Req_Resp, msgInput);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bcc18ee5-6aa3-4469-beab-22158a540701")]
+            construct msgOutput
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("01c55223-03ec-4679-9479-5dc8705bdb5e")]
+                transform (msgOutput) = CICD_Demo.Maps.TransformInputToOutput (msgInput);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a68d3f2a-38f7-45fb-b446-7758528c622d")]
+            send (Input_Port.Sync_Req_Resp, msgOutput);
+        }
+    }
+}
+
