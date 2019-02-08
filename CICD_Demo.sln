@@ -7,6 +7,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CICD_Demo", "CICD_Demo\CICD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCases", "TestCases\TestCases.csproj", "{7038CE13-A3C9-446B-9A50-7517546F6374}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{27A9CC88-E655-4A45-AEF0-F043E76CBA78}"
+	ProjectSection(SolutionItems) = preProject
+		Deployment\Deployment.btdfproj = Deployment\Deployment.btdfproj
+		Deployment\InstallWizard.xml = Deployment\InstallWizard.xml
+		Deployment\License.rtf = Deployment\License.rtf
+		Deployment\PortBindingsMaster.xml = Deployment\PortBindingsMaster.xml
+		Deployment\SettingsFileGenerator.xml = Deployment\SettingsFileGenerator.xml
+		Deployment\UnInstallWizard.xml = Deployment\UnInstallWizard.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VirtualDirectory", "VirtualDirectory", "{19BE8702-0713-457F-BCDD-1D19D1A356F1}"
+	ProjectSection(SolutionItems) = preProject
+		Deployment\VirtualDirectory\SampleAppWcfService\NameAppenderServiceClient.svc = Deployment\VirtualDirectory\SampleAppWcfService\NameAppenderServiceClient.svc
+		Deployment\VirtualDirectory\SampleAppWcfService\Web.config = Deployment\VirtualDirectory\SampleAppWcfService\Web.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Data", "App_Data", "{A41F4531-36E2-4FCE-ABB4-0923912779A7}"
+	ProjectSection(SolutionItems) = preProject
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\CICD_Demo.Schemas.Input.xsd = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\CICD_Demo.Schemas.Input.xsd
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\CICD_Demo.Schemas.Output.xsd = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\CICD_Demo.Schemas.Output.xsd
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\SchemaIndex.xml = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\SchemaIndex.xml
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\Serialization.xsd = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\Serialization.xsd
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\ServiceDescription.xml = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\ServiceDescription.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{06E792A2-2127-450C-9559-7D4D749B8E6D}"
+	ProjectSection(SolutionItems) = preProject
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\Temp\BindingInfo.xml = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\Temp\BindingInfo.xml
+		Deployment\VirtualDirectory\SampleAppWcfService\App_Data\Temp\WcfServiceDescription.xml = Deployment\VirtualDirectory\SampleAppWcfService\App_Data\Temp\WcfServiceDescription.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +57,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19BE8702-0713-457F-BCDD-1D19D1A356F1} = {27A9CC88-E655-4A45-AEF0-F043E76CBA78}
+		{A41F4531-36E2-4FCE-ABB4-0923912779A7} = {19BE8702-0713-457F-BCDD-1D19D1A356F1}
+		{06E792A2-2127-450C-9559-7D4D749B8E6D} = {A41F4531-36E2-4FCE-ABB4-0923912779A7}
 	EndGlobalSection
 EndGlobal

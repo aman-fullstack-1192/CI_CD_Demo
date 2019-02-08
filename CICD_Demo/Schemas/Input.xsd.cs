@@ -9,7 +9,7 @@ namespace CICD_Demo.Schemas {
     [Schema(@"http://CICD_Demo.Schemas.Input",@"Req")]
     [System.SerializableAttribute()]
     [SchemaRoots(new string[] {@"Req"})]
-    public sealed class Input : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    public sealed class Input : Microsoft.BizTalk.TestTools.Schema.TestableSchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;

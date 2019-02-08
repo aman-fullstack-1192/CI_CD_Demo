@@ -13,22 +13,20 @@ namespace SampleBTApp.UnitTests
     [TestClass]
     public class MapTests
     {
-        private const string InputFileDirectory =
-@"E:\BizTalkCICDUsingJenkins\BizTalkApp\SampleBTApp\SampleBTApp.UnitTests\SampleMessages\In\";
-       private const string OutputFileDirectory =
-@"E:\BizTalkCICDUsingJenkins\BizTalkApp\SampleBTApp\SampleBTApp.UnitTests\SampleMessages\Out\";
+        private const string InputFileDirectory = @"C:\Aman\CI_CD\IN\";
+       private const string OutputFileDirectory = @"C:\Aman\CI_CD\OUT\";
  
         SchemaDefinition sourceSchema = new SchemaDefinition()
         {
-            XmlSchemaNameSpace = "http://SampleBTApp.Schemas.Input Jump ",
-            XmlSchemaPath = @"E:\BizTalkCICDUsingJenkins\BizTalkApp\SampleBTApp\SampleBTApp.Schemas\Input.xsd"
- 
+            XmlSchemaNameSpace = "http://CICD_Demo.Schemas.Input",
+            XmlSchemaPath = @"C:\Users\amkumar\Documents\visual studio 2015\Projects\CICD_Demo\CICD_Demo\Schemas\Input.xsd"
+
         };
  
         SchemaDefinition destinationSchema = new SchemaDefinition()
         {
-            XmlSchemaNameSpace = "http://SampleBTApp.Schemas.Output Jump ",
-            XmlSchemaPath = @"E:\BizTalkCICDUsingJenkins\BizTalkApp\SampleBTApp\SampleBTApp.Schemas\Output.xsd"
+            XmlSchemaNameSpace = "http://CICD_Demo.Schemas.Output",
+            XmlSchemaPath = @"C:\Users\amkumar\Documents\visual studio 2015\Projects\CICD_Demo\CICD_Demo\Schemas\Output.xsd"
         };
  
         [TestMethod]
@@ -45,7 +43,7 @@ namespace SampleBTApp.UnitTests
             new XPathDefinition()
                 {
                 XPath = fullNameXpath,
-                Value = "Mandar Dharmadhikari"
+                Value = "Aman kumar"
 
             }
         };
